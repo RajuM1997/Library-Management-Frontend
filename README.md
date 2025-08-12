@@ -1,69 +1,67 @@
-# React + TypeScript + Vite
+# TurningPages
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TurningPages is a modern, responsive book website built with React and TypeScript.  
+It leverages Redux Toolkit for state management, Zod for schema validation, shadcn UI components for styling, and React Router for client-side routing.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Browse and search books by title, author, genre, and ISBN
+- Add, borrow, and manage book inventory
+- Form validation with Zod, including advanced async checks
+- Smooth client-side navigation with React Router
+- Global state management using Redux Toolkit Query
+- Clean, accessible UI powered by shadcn components
+- Loading spinners for asynchronous actions to improve UX
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- **React** - Frontend library
+- **TypeScript** - Static typing for safer code
+- **Redux Toolkit (RTK Query)** - API data fetching and caching
+- **Zod** - Schema validation and form parsing
+- **shadcn UI** - UI component library with Tailwind CSS
+- **React Router v7** - Client-side routing
+- **Loading spinner** - Custom or library-based spinner for async feedback
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v16 or later)
+- npm or yarn package manager
+
+### Installation
+
+1. Clone the repository
+
+```bash
+git clone git@github.com:RajuM1997/Library-Management-Frontend.git
+cd Library-Management-Frontend
+
+npm install
+# or
+yarn install
+
+npm start
+# or
+yarn start
+
+
+src/
+├── components/      # Reusable UI components
+├── hooks/           # Custom React hooks
+├── pages/           # Route-based pages
+├── routes/          # React Router routes configuration
+├── store/           # Redux store setup
+├── types/           # TypeScript types and interfaces
+├── utils/           # Utility functions
+├── layout/           # Main layout
+└── main.tsx         # Main app component
+
 ```

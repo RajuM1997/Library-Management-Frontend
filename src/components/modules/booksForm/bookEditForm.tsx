@@ -43,9 +43,11 @@ function EditBookForm() {
         description: fieldData.description || data.data.description,
       };
 
-      const res = await updateBook({ id, newBook }).unwrap();
+      const res = await updateBook({ id, ...newBook }).unwrap();
+      console.log(res, newBook);
+
       if (res.success) {
-        successMessage(res.message);
+        successMessage("Book Updated Successfully");
         navigate("/all-books");
       }
     } catch (error: unknown) {

@@ -2,6 +2,10 @@
 
 ## Live Preview
 
+## Live Preview
+
+[Click here to view the app](https://library-management-frontend-chi-coral.vercel.app/)
+
 TurningPages is a modern, responsive book website built with React and TypeScript.  
 It leverages Redux Toolkit for state management, Zod for schema validation, shadcn UI components for styling, and React Router for client-side routing.
 

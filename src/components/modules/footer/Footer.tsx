@@ -10,7 +10,7 @@ const Footer = () => {
     <footer className="grid grid-cols-1 md:grid-cols-4 gap-5 container mx-auto py-10">
       <div>
         <div className="flex gap-4 items-center">
-          <img className="w-[50px] h-[50px]" src={logo} alt="" />
+          <img className="w-[40px] h-[40px]" src={logo} alt="" />
           <h3 className="text-2xl font-bold text-green-400">
             About TurningPages
           </h3>
@@ -38,10 +38,10 @@ const Footer = () => {
             Address: 123 Story Lane, Booktown, USA
           </li>
         </ul>
-        <div className="flex gap-2 pt-2">
-          <img className="w-[40px] h-[40px]" src={facebook} alt="" />
-          <img className="w-[40px] h-[40px]" src={whatApp} alt="" />
-          <img className="w-[40px] h-[40px]" src={youtube} alt="" />
+        <div className="flex gap-4 pt-2">
+          <img className="w-[30px] h-[30px]" src={facebook} alt="" />
+          <img className="w-[30px] h-[30px]" src={whatApp} alt="" />
+          <img className="w-[30px] h-[30px]" src={youtube} alt="" />
         </div>
       </div>
       <div>

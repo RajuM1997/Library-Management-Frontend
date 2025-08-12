@@ -1,6 +1,8 @@
 import AddBookForm from "@/components/modules/booksForm/addBookForm";
+import { useTitleChange } from "@/hooks/useTitleChange";
 
 const AddBook = () => {
+  useTitleChange("add-book");
   return (
     <section>
       <h3 className="pt-8 mb-16  text-2xl font-semibold text-green-400">

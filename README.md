@@ -1,5 +1,7 @@
 # TurningPages
 
+## Live Preview
+
 TurningPages is a modern, responsive book website built with React and TypeScript.  
 It leverages Redux Toolkit for state management, Zod for schema validation, shadcn UI components for styling, and React Router for client-side routing.
 

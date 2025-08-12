@@ -22,8 +22,8 @@ const BorrowTable = () => {
         <TableHeader>
           <TableRow>
             <TableHead>Title</TableHead>
-            <TableHead>Isbn</TableHead>
-            <TableHead>Total Quantity</TableHead>
+            <TableHead>ISBN</TableHead>
+            <TableHead>Total Quantity Borrowed</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>

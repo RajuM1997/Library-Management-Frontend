@@ -1,13 +1,14 @@
 import Loader from "@/components/modules/loader/Loader";
 import { Button } from "@/components/ui/button";
+import { useTitleChange } from "@/hooks/useTitleChange";
 import { useGetSingleBookQuery } from "@/redux/api/bookApi";
 import { CassetteTape, User } from "lucide-react";
 import { Link, useParams } from "react-router";
 
 const BookDetails = () => {
   const { id } = useParams();
+  useTitleChange(`book-details-${id}`);
   const { data, isLoading } = useGetSingleBookQuery(id);
-  console.log({ data });
 
   if (isLoading) {
     return <Loader />;

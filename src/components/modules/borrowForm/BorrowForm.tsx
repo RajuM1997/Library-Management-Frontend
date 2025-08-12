@@ -28,6 +28,7 @@ import { errorMessage, successMessage } from "@/utils/notification";
 import { DialogTitle } from "@radix-ui/react-dialog";
 import { format } from "date-fns";
 import { CalendarIcon } from "lucide-react";
+import { useState } from "react";
 import { useForm, type FieldValues, type SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router";
 
@@ -35,6 +36,7 @@ function BorrowForm({ id }: { id: string }) {
   const form = useForm();
   const [addBorrow] = useAddBorrowMutation(undefined);
   const { refetch } = useGetBooksQuery(undefined);
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
@@ -49,6 +51,7 @@ function BorrowForm({ id }: { id: string }) {
         refetch();
         successMessage(res.message);
         form.reset();
+        setOpen(true);
         setTimeout(() => {
           navigate("/borrow-summary");
         }, 500);
@@ -60,10 +63,10 @@ function BorrowForm({ id }: { id: string }) {
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <Form {...form}>
         <DialogTrigger asChild>
-          <Button variant="outline" className="cursor-pointer">
+          <Button variant="outline" className="cursor-pointer w-[100px]">
             Borrow
           </Button>
         </DialogTrigger>
@@ -120,7 +123,7 @@ function BorrowForm({ id }: { id: string }) {
                           {field.value ? (
                             format(field.value, "PPP")
                           ) : (
-                            <span>Pick a date</span>
+                            <span>Pick a due date</span>
                           )}
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
@@ -143,7 +146,7 @@ function BorrowForm({ id }: { id: string }) {
             />
             <DialogFooter>
               <Button type="submit" className="mt-5 ml-auto bg-green-400">
-                Save changes
+                Borrow Now
               </Button>
             </DialogFooter>
           </form>

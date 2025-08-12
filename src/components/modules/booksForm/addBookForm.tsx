@@ -71,8 +71,8 @@ function AddBookForm() {
         ...data,
         copies: Number(data.copies),
       };
+
       const bookData = createBookZodSchema.parse(newBook);
-      console.log({ bookData });
 
       if (!newBook) {
         warningMessage("Please fill in all required fields");
@@ -194,7 +194,7 @@ function AddBookForm() {
         />
 
         <Button type="submit" className="mt-5 ml-auto bg-green-400">
-          Save changes
+          Add Book
         </Button>
       </form>
     </Form>

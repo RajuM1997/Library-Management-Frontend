@@ -152,7 +152,7 @@ function EditBookForm() {
           />
 
           <Button type="submit" className="mt-5 ml-auto bg-green-400">
-            Save changes
+            Update Book
           </Button>
         </form>
       </Form>
